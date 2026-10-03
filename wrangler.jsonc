@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "notion2rss-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-05-21",
+  "observability": {
+    "enabled": true
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+
+  // 配置 KV 存储
+  "kv_namespaces": [
+    {
+      "binding": "notion2rss",
+      "id": "5a6bc9ffdd444cdebe8fb92bae740806"
+    }
+  ],
+  // 配置 RSS
+  "vars": {
+    // 你希望转换为 RSS 的 Notion 数据库 ID
+    "N2R_NOTION_DATABASE_ID": "3cb12eb4-804d-801b-93af-000b34256fc7",
+    // 博客的地址
+    "N2R_SITE_URL": "https://swb72.notion.site",
+    // rss feed 的地址
+    "N2R_FEED_URL": "https://notion2rss-worker.stevenbuehler.workers.dev",
+    // 博客的名称
+    "N2R_TITLE": "Steven Watson Buehler",
+    // 博客的语言
+    "N2R_LANGUAGE": "en-US",
+    // 博客的作者
+    "N2R_AUTHOR": "Steven Buehler",
+    // rss feed 的描述
+    "N2R_DESCRIPTION": "Steven Buehler's personal blog via Notion",
+    // rss feed 的图片
+    "N2R_IMAGE_URL": "https://i.imgur.com/7WJRaSx.jpeg"
+  }
+}
